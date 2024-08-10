@@ -3,6 +3,22 @@
     padding: 0;
     font-family: "Playfair Display", serif;
 }
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+    margin: 1rem 0;
+}
+.search input{
+    width: 50%;
+    height: 3rem;
+    padding: 0.5rem;
+    margin: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 1.2rem;
+}
 .container h1{
     /* background-color: lightblue; */
     margin: 1rem 0;
@@ -17,6 +33,7 @@
     gap: 2rem;
     /* background-color: red; */
     padding: 1rem;
+    margin: 0 1rem;
 }
 .container .row .col{
     border: 1px solid #333;

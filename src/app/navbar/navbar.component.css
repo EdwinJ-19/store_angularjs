@@ -23,6 +23,11 @@ nav .link ul {
     gap: 5rem;
     font-size: 1.2rem;
 }
+nav .link ul li:hover{
+    cursor: pointer;
+    transform: translateY(-2px);
+    transition: all 0.5s ease-in-out;
+}
 nav .search-box input{
     padding: 0.5rem 1rem;
     border: none;
