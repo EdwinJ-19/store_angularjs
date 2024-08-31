@@ -11,20 +11,21 @@
 <body>
     <div class="search">
         <input type="search" placeholder="Search Here">
+        {{searchFilter}}
     </div>
     <div class="container">
-        <h1>Category Name</h1>
+        <h1>Recommended Products</h1>
         <div class="row">
-            <div class="col">
+            <div class="col" *ngFor="let products of product">
                 <!-- <img src="assets/images/iphone_15_pro_max.jpg" alt="iphone_images"> -->
                 <!-- <img src="assets/images/iphone_15_pro_max.webp" alt="iPhone 15 Pro Max"> -->
-                <img src="assets/images/iphone_15_pro_max.webp" alt="iPhone 15 Pro Max">
-                <h2>Product name</h2>
-                <p>Product Description</p>
-                <p><span>Product Price</span></p>
+                <img [src]="products.image" alt="{{products.name}}">
+                <h2>{{products.name}}</h2>
+                <p>{{products.description}}</p>
+                <p><span [ngClass]="{'highprice': giveProductPriceColor(products.price)}">{{products.price | currency: 'INR'}} </span></p>
                 <div class="badge">
-                <p><span>category</span></p>
-                <p><span>stock or no</span></p>
+                <h3><span>{{products.category}}</span></h3>
+                <p><span [ngStyle] = "{color: giveProductStockColor(products.stock)}">{{products.stock}}</span></p>
                 </div>
             </div>
         </div>
