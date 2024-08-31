@@ -11,14 +11,13 @@
 <body>
     <div class="search">
         <input type="search" [(ngModel)]="searchProduct" placeholder="Search Here">
+        <!-- <input type="search" (input)="onInputChanges($event)" placeholder="Search Here"> -->
         {{searchProduct}}
     </div>
     <div class="container">
         <h1>Recommended Products</h1>
         <div class="row">
-            <div class="col" *ngFor="let products of product">
-                <!-- <img src="assets/images/iphone_15_pro_max.jpg" alt="iphone_images"> -->
-                <!-- <img src="assets/images/iphone_15_pro_max.webp" alt="iPhone 15 Pro Max"> -->
+            <div class="col" *ngFor="let products of tempValue | searchFilter:searchProduct">
                 <img [src]="products.image" alt="{{products.name}}">
                 <h2>{{products.name}}</h2>
                 <p>{{products.description}}</p>

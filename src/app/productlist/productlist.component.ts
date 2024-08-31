@@ -2,16 +2,23 @@ import { Component } from '@angular/core';
 import { Product } from './product';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { SearchFilterPipe } from '../search-filter.pipe';
 
 @Component({
   selector: 'app-productlist',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, SearchFilterPipe],
   templateUrl: './productlist.component.html',
   styleUrl: './productlist.component.css'
 })
 export class ProductlistComponent {
   searchProduct = ""
+  tempValue !: Product[];
+
+  ngOnInit(): void{
+    this.tempValue = this.product;
+    // console.log(this.tempValue);
+  }
 
   product : Product[] = [
     {
@@ -75,6 +82,15 @@ export class ProductlistComponent {
     }else{
       return 'red'
     }
+  }
+
+  // another way of using search filter, the first one is i have used as search filter pipe
+  onInputChanges(event:any){
+    const typedvalue = event.target.value;
+
+    this.tempValue = this.product.filter((prod)=>{
+      return prod.name.toLowerCase().includes(typedvalue.toLowerCase());
+    })
   }
 
 
