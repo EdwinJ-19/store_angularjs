@@ -10,8 +10,8 @@
 </head>
 <body>
     <div class="search">
-        <input type="search" placeholder="Search Here">
-        {{searchFilter}}
+        <input type="search" [(ngModel)]="searchProduct" placeholder="Search Here">
+        {{searchProduct}}
     </div>
     <div class="container">
         <h1>Recommended Products</h1>

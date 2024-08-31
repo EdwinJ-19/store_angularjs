@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
 import { Product } from './product';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-productlist',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './productlist.component.html',
   styleUrl: './productlist.component.css'
 })
 export class ProductlistComponent {
-  searchFilter = ""
+  searchProduct = ""
 
   product : Product[] = [
     {
