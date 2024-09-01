@@ -6,6 +6,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Product } from './productlist/product';
 import { CommonModule } from '@angular/common';
+import { DataService } from './data.service';
 // import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -18,6 +19,10 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   title = 'store';
 
+
+  constructor(private dataService: DataService){
+    console.log(this.dataService);
+  }
   // product : Product[] = [
   //   {
   //     id:1,

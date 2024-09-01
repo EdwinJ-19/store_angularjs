@@ -19,12 +19,17 @@
         <div class="row">
             <div class="col" *ngFor="let products of tempValue | searchFilter:searchProduct">
                 <img [src]="products.image" alt="{{products.name}}">
-                <h2>{{products.name}}</h2>
-                <p>{{products.description}}</p>
-                <p><span [ngClass]="{'highprice': giveProductPriceColor(products.price)}">{{products.price | currency: 'INR'}} </span></p>
-                <div class="badge">
-                <h3><span>{{products.category}}</span></h3>
-                <p><span [ngStyle] = "{color: giveProductStockColor(products.stock)}">{{products.stock}}</span></p>
+                <div class="inside-card">
+                    <h2>{{products.name}}</h2>
+                    <p>{{products.description}}</p>
+                    <p><span [ngClass]="{'highprice': giveProductPriceColor(products.price)}">{{products.price | currency: 'INR'}} </span></p>
+                    <div class="badge">
+                    <h3><span>{{products.category}}</span></h3>
+                    <p><span [ngStyle] = "{color: giveProductStockColor(products.stock)}">{{products.stock}}</span></p>
+                    <div class="button">
+                        <a href=""><span>Add to Cart?</span></a>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
