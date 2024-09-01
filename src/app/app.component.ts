@@ -8,6 +8,8 @@ import { Product } from './productlist/product';
 import { CommonModule } from '@angular/common';
 import { DataService } from './data.service';
 // import { FormsModule } from '@angular/forms';
+// import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-root',
@@ -18,6 +20,7 @@ import { DataService } from './data.service';
 })
 export class AppComponent {
   title = 'store';
+  // faRightToBracket = faRightToBracket;
 
 
   constructor(private dataService: DataService){
