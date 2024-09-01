@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SearchFilterPipe } from '../search-filter.pipe';
 import { DataService } from '../data.service';
+import { CustomHoverBtnDirective } from '../custom-hover-btn.directive';
 
 @Component({
   selector: 'app-productlist',
   standalone: true,
-  imports: [CommonModule, FormsModule, SearchFilterPipe],
+  imports: [CommonModule, FormsModule, SearchFilterPipe, CustomHoverBtnDirective],
   templateUrl: './productlist.component.html',
   styleUrl: './productlist.component.css'
 })
